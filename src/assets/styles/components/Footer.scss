@@ -1,0 +1,31 @@
+.footer {
+  width: 100vw;
+  max-height: 150px;
+  padding: 10px 0;
+  background-color: #202020;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  color: #14afc3;
+}
+
+.develop,
+.credits {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #14afc3;
+
+  &:hover {
+    color: #fa633d;
+  }
+}
