@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as comicsActions from '../redux/actions/comicsActions';
 import * as comicInfo from '../redux/actions/comicInfo';
+import * as seriesAction from '../redux/actions/seriesAction';
 import Comic from '../components/Comic';
 import Spinner from '../components/Spinner';
 import '../assets/styles/containers/Home.scss';
@@ -10,6 +11,7 @@ const Home = (props) => {
 
   useEffect(() => {
     props.getAllComics(99);
+
   }, []);
 
   const showComics = () => {
@@ -25,10 +27,18 @@ const Home = (props) => {
   };
   console.log(props.comicsReducer.comics);
 
+
   const handleComicFilter = event => {
     props.getOneComic(event.currentTarget.value);
     props.history.push(`/comic/${event.currentTarget.value}`);
   };
+
+  const handleSeries = () => {
+    props.getAllSeries();
+    props.history.push(`/series`);
+  };
+
+  console.log('series:', props.seriesReducer);
 
   return (
     <>
@@ -41,6 +51,7 @@ const Home = (props) => {
             ))
           }
         </select>
+        <button onClick={handleSeries}> All series</button>
       </div>
       <section className={props.comicsReducer.comics < 0 ? 'spinner' : 'comics_container'}>
         {
@@ -51,16 +62,18 @@ const Home = (props) => {
   );
 };
 
-const mapStateToProps = ({ comicsReducer, oneComic }) => {
+const mapStateToProps = ({ comicsReducer, oneComic, seriesReducer }) => {
   return {
     comicsReducer,
-    oneComic
+    oneComic,
+    seriesReducer
   };
 };
 
 const mapDispatchToProps = {
   ...comicsActions,
-  ...comicInfo
+  ...comicInfo,
+  ...seriesAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
