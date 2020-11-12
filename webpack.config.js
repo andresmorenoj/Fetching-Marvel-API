@@ -6,10 +6,15 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  devServer: {
+    port: 8080,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -36,6 +41,17 @@ module.exports = {
           },
           'css-loader',
           'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            'loader': 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]'
+            }
+          }
         ]
       }
     ]

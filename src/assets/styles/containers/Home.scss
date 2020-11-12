@@ -1,0 +1,26 @@
+.comics_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-items: center;
+  justify-content: center;
+  gap: 30px 20px;
+  overflow: hidden;
+  padding: 0 50px;
+  margin: 20px 0;
+}
+
+.showSpinner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.filter-series {
+  background-color: #202020;
+  width: fit-content;
+  padding: 30px 50px;
+  margin: 0 auto;
+}
+
+.filter_container {
+  margin-right: 50px;
+}
