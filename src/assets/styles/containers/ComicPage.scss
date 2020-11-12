@@ -1,0 +1,33 @@
+.main_container {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relatedComics {
+  width: 100%;
+
+  hr {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 50px;
+  }
+}
+
+.relatedComics_container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px;
+  padding: 0 20px;
+}
