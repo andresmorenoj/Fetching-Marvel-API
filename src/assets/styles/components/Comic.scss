@@ -1,0 +1,17 @@
+.container_comic {
+  width: 310px;
+  height: fit-content;
+  border: 1px solid #1371b9;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.comic_img {
+  width: 300px;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+
+.comic_title {
+  text-align: center;
+}
