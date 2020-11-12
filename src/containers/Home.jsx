@@ -25,8 +25,6 @@ const Home = (props) => {
       ))
       : <Spinner />;
   };
-  console.log(props.comicsReducer.comics);
-
 
   const handleComicFilter = event => {
     props.getOneComic(event.currentTarget.value);
@@ -38,12 +36,10 @@ const Home = (props) => {
     props.history.push(`/series`);
   };
 
-  console.log('series:', props.seriesReducer);
-
   return (
     <>
-      <div >
-        <select name="comicsList" id="comicsFilter" onChange={handleComicFilter}>
+      <div className='filter-series'>
+        <select className='filter_container' name="comicsList" id="comicsFilter" onChange={handleComicFilter}>
           <option value="Commics List">Comics List</option>
           {
             props.comicsReducer.comics.map(item => (

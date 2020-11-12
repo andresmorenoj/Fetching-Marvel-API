@@ -5,9 +5,6 @@ import Comic from '../components/Comic';
 import '../assets/styles/containers/ComicPage.scss';
 
 const ComicPage = (props) => {
-  console.log(props.oneComic.oneComic);
-  /*  console.log('path: ', props.oneComic.oneComic.thumbnail.path); */
-
   useEffect(() => {
     props.getAllComics(5);
   }, []);
@@ -22,8 +19,6 @@ const ComicPage = (props) => {
         />
       ));
   };
-
-  console.log(props.comicsReducer.comics);
 
   return (
     <section className='main_container'>

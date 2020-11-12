@@ -5,13 +5,12 @@ import Spinner from '../components/Spinner';
 import '../assets/styles/containers/Series.scss';
 
 const Series = (props) => {
-  console.log(props.seriesReducer.series);
-
   const showSeries = () => {
     return props.seriesReducer.series.length > 0
       ? props.seriesReducer.series.map(item => (
         <Serie
           key={item.id}
+          idSerie={item.id}
           serieImg={`${item.thumbnail.path}.${item.thumbnail.extension}`}
           serieTitle={item.title}
         />

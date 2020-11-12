@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getOneComic = (id) => async dispatch => {
-  const response = await axios.get(`https://gateway.marvel.com:443/v1/public/comics/${id}?apikey=bfef4b7aafd300840e8acb650288e0e3`);
+  const response = await axios.get(`https://gateway.marvel.com:443/v1/public/comics/${id}?apikey=b0ca0515fa96e5e9be41599f50a9a412`);
   dispatch({
     type: 'GET_ONE_COMIC',
     payload: [
