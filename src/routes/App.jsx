@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import HelloWorld from '../components/HelloWorld';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../containers/Home';
+import Layout from '../components/Layout';
 
 const App = () => (
   <BrowserRouter>
-    <Route exact path={'/'} component={HelloWorld} />
+    <Layout>
+      <Switch>
+        <Route exact path={'/'} component={Home} />
+      </Switch>
+    </Layout>
   </BrowserRouter>
 );
 
